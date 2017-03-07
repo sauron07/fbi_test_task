@@ -1,0 +1,17 @@
+matvieiev_login:
+    resource: "@MatvieievLoginBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/DefaultController.php"
+    type:     annotation
+
+oauth2_server:
+    resource: "@OAuth2ServerBundle/Controller/"
+    type: annotation
+    prefix: /
+
+employee:
+    type: annotation
+    resource: "@AppBundle/Controller/EmployeeController.php"
+    prefix: /

@@ -1,0 +1,8 @@
+parameters:
+    firewalls.main.logout.target: /employee/
+
+services:
+    employee:
+        class: AppBundle\Service\Employee
+        arguments:
+            - "@=service('doctrine').getRepository('AppBundle:Employee')"

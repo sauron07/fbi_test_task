@@ -1,0 +1,27 @@
+{% block messages %}
+    {% if app.session.flashBag %}
+        <div class="container-fluid">
+            {% for notice_message in app.session.flashBag.get('notice') %}
+                <div class="row">
+                    <div class="alert alert-info col-xs-12" role="alert">
+                        {{ notice_message }}
+                    </div>
+                </div>
+            {% endfor %}
+            {% for notice_message in app.session.flashBag.get('success') %}
+                <div class="row">
+                    <div class="alert alert-success col-xs-12" role="alert">
+                        {{ notice_message }}
+                    </div>
+                </div>
+            {% endfor %}
+            {% for notice_message in app.session.flashBag.get('error') %}
+                <div class="row">
+                    <div class="alert alert-danger col-xs-12" role="alert">
+                        {{ notice_message }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
